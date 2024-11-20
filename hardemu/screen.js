@@ -1156,8 +1156,6 @@ function VideoChip(Zeal, PIO, scale) {
     const IO_MAPPING_CRC   = 2;
     const IO_MAPPING_SOUND = 3;
 
-    const peri_crc32 = new CRC32();
-    const peri_sound = new Sound();
 
     /* Highest five bits of the FPGA 22-bit physical memory address */
     const mapping = {
