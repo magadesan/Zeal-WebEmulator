@@ -58,4 +58,13 @@ $(".regaddr").click(function() {
         setRAMView(virtaddr, size);
         $("#memory-tab").click();
     }
-});
+})
+
+$(".regaddr").click(function() {
+    //const virtaddr = parseInt($(this).text(), 16);
+    //if (virtaddr || virtaddr == 0) {
+        //const size = 256;
+        seven();
+        $("#seven-tab").click();
+    }
+);
