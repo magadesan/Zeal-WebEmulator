@@ -446,7 +446,6 @@ class Z80Machine {
         function restart(resetinterval=true) {
             set_running(false);
             zealcom.reset();
-            terminal.clear();
             zealcom = new Zeal8bitComputer();
             if (resetinterval == true) {
                 clearInterval(interval);
@@ -485,7 +484,6 @@ class Z80Machine {
 
     reset() {
         this.zpu.reset();
-        terminal.clear();
         clearRegView();
         clearDisassemblerView();
         this.step_cpu();

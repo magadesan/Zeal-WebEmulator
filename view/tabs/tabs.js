@@ -25,18 +25,3 @@ function setActiveTab(tab) {
 
     localStorage.setItem('tab', tab);
 }
-
-$(() => {
-    if(params.tab) {
-        setActiveTab(params.tab);
-        return;
-    }
-
-    const lst = localStorage.getItem('tab');
-    if(lst) {
-        setActiveTab(lst);
-        return;
-    }
-
-    setActiveTab('uart');
-});
