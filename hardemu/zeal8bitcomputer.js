@@ -26,7 +26,7 @@ class Zeal8bitComputer extends Z80Machine {
         const eeprom = new I2C_EEPROM(this, i2c, null);
 
         /* Create a HostFS to ease the file and directory access for the VM */
-        const hostfs = new HostFS(this.mem_read, this.mem_write);
+        //const hostfs = new HostFS(this.mem_read, this.mem_write);
 
         /* Create the memory space for Zeal 8-bit Computer */
         const options = {
@@ -46,7 +46,7 @@ class Zeal8bitComputer extends Z80Machine {
 
         /* Similarly for the I/O bus */
         this.machine_add_io_device(0x80, vchip.io_region);
-        this.machine_add_io_device(0xc0, hostfs.io_region);
+        //this.machine_add_io_device(0xc0, hostfs.io_region);
         this.machine_add_io_device(0xd0, pio.io_region);
         this.machine_add_io_device(0xe0, keyboard.io_region);
         this.machine_add_io_device(0xf0, mmu.io_region);
@@ -64,7 +64,7 @@ class Zeal8bitComputer extends Z80Machine {
         this.keyboard = keyboard;
         this.ds1307 = ds1307;
         this.eeprom = eeprom;
-        this.hostfs = hostfs;
+        //this.hostfs = hostfs;
 
         this.set_serial = (type) => {
             this.uart.setActive(false);

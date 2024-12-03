@@ -143,15 +143,6 @@ $('#fullscreen-mode').on('click', () => {
     }
 });
 
-$('#hostfs-mount').on('click', () => {
-    if(zealcom.hostfs.mounted()) {
-        $('#hostfs-mount').text('Mount HostFS')
-        zealcom.hostfs.unmount();
-    } else {
-        $('#hostfs-mount').text('Unmount HostFS')
-        zealcom.hostfs.mount();
-    }
-});
 
 $('#container .close').on('click', () => {
     $('#toppanel').toggleClass('theater-mode');
@@ -184,12 +175,4 @@ jQuery(() => {
         $('#fullscreen-mode').show();
     }
 
-    window.addEventListener("hostfs", (e) => {
-        const { mounted = false } = e.detail;
-        if(mounted) {
-            $('#hostfs-mount').text('Unmount HostFS')
-        } else {
-            $('#hostfs-mount').text('Mount HostFS')
-        }
-    });
 });
