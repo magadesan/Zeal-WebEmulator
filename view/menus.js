@@ -128,21 +128,6 @@ $('#theater-mode').on('click', () => {
     $('#toppanel').toggleClass('theater-mode');
 });
 
-window.fullscreenMode = false;
-$('#fullscreen-mode').on('click', () => {
-    const canvas = document.querySelector('#container canvas');
-
-    if(document.fullscreenElement && document.exitFullscreen) {
-        document.exitFullscreen();
-    } else {
-        if(canvas && canvas.requestFullscreen) {
-            canvas.requestFullscreen({
-                navigationUI: "hide",
-            });
-        }
-    }
-});
-
 
 $('#container .close').on('click', () => {
     $('#toppanel').toggleClass('theater-mode');
@@ -168,11 +153,6 @@ jQuery(() => {
     if(!navigator || !navigator.serial) {
         // disable web serial, only supported in latest Chrome, Edge and Opera
         $('#web-serial-settings').hide();
-    }
-
-    const canvas = document.querySelector('#container canvas');
-    if(canvas && canvas.requestFullscreen) {
-        $('#fullscreen-mode').show();
     }
 
 });
